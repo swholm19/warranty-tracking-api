@@ -7,7 +7,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= project_name %>_development
+  database: <%= project_name %> #_development
 
 test:
   <<: *default
