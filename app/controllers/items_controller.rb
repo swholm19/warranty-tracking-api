@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 class ItemsController < ProtectedController
   before_action :set_item, only: %i[show update destroy]
 
   # GET /items
   def index
-    @items = current_user.items.all # Item.all
+    @items = current_user.items.all
 
-    render json: @items
+    sorted = @items.order(:expiration_date)
+
+    render json: sorted
   end
 
   # GET /items/1
@@ -16,7 +20,6 @@ class ItemsController < ProtectedController
   # POST /items
   def create
     @item = current_user.items.build(item_params)
-    # Item.new(item_params)
 
     if @item.save
       render json: @item, status: :created, location: @item
@@ -48,6 +51,6 @@ class ItemsController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def item_params
-    params.require(:item).permit(:name, :price, :purchase_date, :expiration_date, :serial_id) #, :user_id)
+    params.require(:item).permit(:name, :price, :purchase_date, :expiration_date, :serial_id)
   end
 end
