@@ -51,6 +51,10 @@ class ItemsController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def item_params
-    params.require(:item).permit(:name, :price, :purchase_date, :expiration_date, :serial_id)
+    params.require(:item).permit(:name,
+                                 :price,
+                                 :purchase_date,
+                                 :expiration_date,
+                                 :serial_id)
   end
 end
