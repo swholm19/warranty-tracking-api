@@ -1,4 +1,5 @@
 <h1>Warranty Management System</h1>
+
 <h2>Links:</h2>
 <ul>
   <li>Client Repository: https://github.com/swholm19/warranty-tracking-client</li>
@@ -25,6 +26,7 @@ works like the standard browser authentication.</p>
   <li>Rails</li>
   <li>Command Line</li>
   <li>PSQL</li>
+  <li>Heroku</li>
 </ul>
 
 <h2>Future Iteration/ fixed problems</h2>
@@ -70,6 +72,6 @@ added.</p>
 </ul>
 
 <h2>Set-up and Installation Instructions</h2>
-<p>To set up front-end you will need to fork and clone repo. Do an NPM install.
+<p>To set up front-end you will need to fork and clone repo. Do Bundle install.
 Will need to create a heroku project and set up client origin to your
 newly created repo, and set the secret base keys for heroku.</p>
